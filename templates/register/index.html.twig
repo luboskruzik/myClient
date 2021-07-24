@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello RegisterController!{% endblock %}
+
+{% block body %}
+
+{{ form_start(form) }}
+    {{ form_row(form.title) }}
+    {{ form_row(form.first_name) }}
+    {{ form_row(form.last_name) }}
+    {{ form_row(form.email) }}
+    {{ form_row(form.phone) }}
+    {{ form_row(form.country) }}
+    <div>
+        <label for="{{ form.privacy_policy.vars.id }}">I agree to the processing of personal data according to <a href="">Privacy policy.</a></label>
+        {{ form_widget(form.privacy_policy) }}
+        {{ form_help(form.privacy_policy) }}
+        {{ form_errors(form.privacy_policy) }}
+    </div>
+    {{ form_row(form.newsletter) }}
+    {{ form_row(form.save) }}
+
+{{ form_end(form) }}
+
+{% endblock %}
